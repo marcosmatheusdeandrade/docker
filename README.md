@@ -1,1 +1,1 @@
-# docker
+Projeto criado para estudos sobre docker
