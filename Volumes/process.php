@@ -1,15 +1,16 @@
 <?php
 
-    $message = $_POST["message"];
+  $message = $_POST["message"];
 
-    $files = scandir("./messages");
-    $num_files - count($files) - 2;
+  $files = scandir("./messages");
+  $num_files = count($files) - 2; // . e ..
 
-    $fileName = "msg-{$num_files}.txt";
-    $file = fopen("./messages/{$fileName}", "x");
+  $fileName = "msg-{$num_files}.txt";
 
-    fwrite($file, $message);
+  $file = fopen("./messages/{$fileName}", "x");
 
-    fclose($file);
+  fwrite($file, $message);
 
-    header("Location index.php");
+  fclose($file);
+
+  header("Location: index.php");
